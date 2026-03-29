@@ -64,12 +64,12 @@ Admin: http://localhost:8000/admin
 
 ## Credentials
 
-Admin:
+### Admin:
 
 username: admin
 password: admin123
 
-User:
+### User:
 
 username: user
 password: user123
