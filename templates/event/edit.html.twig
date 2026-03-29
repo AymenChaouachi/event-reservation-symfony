@@ -1,0 +1,11 @@
+<h1>Edit Event</h1>
+
+<form method="post">
+    <input name="title" value="{{ event.title }}"><br>
+    <textarea name="description">{{ event.description }}</textarea><br>
+    <input name="date" value="{{ event.date|date('Y-m-d H:i') }}"><br>
+    <input name="location" value="{{ event.location }}"><br>
+    <input name="seats" value="{{ event.seats }}"><br>
+
+    <button>Update</button>
+</form>

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Admin Dashboard</h1>
+
+<h2>Events</h2>
+
+<a href="/admin/event/new">Create Event</a>
+
+<ul>
+    {% for event in events %}
+        <li>
+            {{ event.title }} ({{ event.date|date('Y-m-d H:i') }})
+
+            | <a href="/event/{{ event.id }}">View</a>
+            | <a href="/admin/event/edit/{{ event.id }}">Edit</a>
+            | <a href="/admin/event/delete/{{ event.id }}" onclick="return confirm('Delete this event?')">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<hr>
+
+<h2>Reservations</h2>
+
+<ul>
+    {% for r in reservations %}
+        <li>
+            {{ r.name }} - {{ r.email }} - {{ r.event.title }}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

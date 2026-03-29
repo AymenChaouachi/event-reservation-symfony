@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Events</h1>
+
+<div>
+    {% for event in events %}
+        <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+            <h3>{{ event.title }}</h3>
+            <p>{{ event.description }}</p>
+            <p>{{ event.date|date('Y-m-d H:i') }}</p>
+            <p>{{ event.location }}</p>
+            <a href="/event/{{ event.id }}">View</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
